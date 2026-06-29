@@ -9,6 +9,6 @@ async def root():
 
 
 #accepts audio file and returns a transcript
-@app.get("/tasks", response_model=List[Task])
+# @app.get("/tasks", response_model=List[Task])
 def get_tasks():
-    return tasks
+    pass
