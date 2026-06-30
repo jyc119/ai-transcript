@@ -1,19 +1,43 @@
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
 # Python
 __pycache__/
-*.pyc
-.venv/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
 venv/
+env/
+ENV/
+.venv/
 
-# Node / Next.js
-node_modules/
-.next/
-out/
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.wav
 
-# Env files
-.env
-.env.local
-.env*.local
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
 
-# OS / editor
+# Logs
+*.log
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# IDE
+.idea/
 .vscode/
+
+# Jupyter
+.ipynb_checkpoints/

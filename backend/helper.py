@@ -1,6 +1,7 @@
 import sounddevice as sd
 import wavio as wv
 import numpy as np
+import os
 from openai import OpenAI
 
 
@@ -22,11 +23,11 @@ def main():
 
 
 def transcribe():
-    client = OpenAI()
+    client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
     audio_file = open("recording.wav", "rb")
 
     transcription = client.audio.transcriptions.create(
-        model="gpt-4o-transcribe",
+        model="gpt-4o-mini-transcribe",
         file=audio_file
     )
 
@@ -34,4 +35,4 @@ def transcribe():
 
 
 if __name__ == "__main__":
-    main()
+    transcribe()
