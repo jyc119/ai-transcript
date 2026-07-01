@@ -1,14 +1,8 @@
 from fastapi import FastAPI
+from router.transcription import router
+from dotenv import load_dotenv
 
+load_dotenv()
 app = FastAPI()
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-#accepts audio file and returns a transcript
-# @app.get("/tasks", response_model=List[Task])
-def get_tasks():
-    pass
+app.include_router(router)
